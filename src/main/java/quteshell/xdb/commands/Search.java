@@ -12,10 +12,10 @@ public class Search implements Command {
     @Override
     public void execute(Quteshell shell, String arguments) {
         Database db = Connect.get(shell.getID());
-        if (arguments!=null){
+        if (arguments != null) {
             shell.writeln("Results:");
             try {
-                for (Database.Table.Entry e:db.dynamic("at phonebook is "+arguments)){
+                for (Database.Table.Entry e : db.dynamic("at phonebook is " + arguments)) {
                     shell.write(e.getLeft());
                     shell.write(" - ");
                     shell.writeln(e.getRight());
@@ -23,10 +23,10 @@ public class Search implements Command {
             } catch (Exception e) {
                 shell.writeln(e.getMessage());
             }
-        }else{
+        } else {
             shell.writeln("List of people:");
             try {
-                for (Database.Table.Entry e:db.getTable("phonebook").getEntries()){
+                for (Database.Table.Entry e : db.getTable("phonebook").getEntries()) {
                     shell.write(e.getLeft());
                     shell.write(" - ");
                     shell.writeln(e.getRight());
