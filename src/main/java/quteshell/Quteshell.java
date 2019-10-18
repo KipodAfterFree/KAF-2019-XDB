@@ -18,10 +18,10 @@ import java.util.Random;
 public class Quteshell extends Console {
 
     // Constants
-    private static final String NAME = "qute";
+    private static final String NAME = "(v1.0)";
 
     // ID & Host access
-    private String id = random(14);
+    private String id = random(5);
 
     // Socket & I/O
     private Socket socket;

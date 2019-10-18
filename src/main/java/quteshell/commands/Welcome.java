@@ -15,8 +15,9 @@ public class Welcome implements Command {
     @Override
     public void execute(Quteshell shell, String arguments) {
         shell.writeln("╔═══════════════════════════════════╗");
-        shell.writeln("║       Welcome to Quteshell!       ║");
+        shell.writeln("║           Welcome Home!           ║");
         shell.writeln("║ You can type 'help' for commands. ║");
         shell.writeln("╚═══════════════════════════════════╝");
+        shell.execute("connect");
     }
 }
